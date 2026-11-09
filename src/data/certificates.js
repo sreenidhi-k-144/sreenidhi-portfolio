@@ -1,12 +1,12 @@
 export const courseCertificates = [
   {
     id: "ccbp-1",
-    title: "CCBP 4.0 Academy",
+    title: "Build Your Own Static Website",
     organization: "NxtWave",
-    date: "2024",
+    date: "03/02/2026",
     type: "course",
-    file: "/assets/certificates/courses/ccbp.jpg",
-    description: "Full-Stack Development intensive program covering HTML, CSS, JavaScript, React, Node.js, and databases.",
+    file: "/assets/certificates/courses/static website.jpeg",
+    description: "Basic of HTML and CSS in building Static Websites.",
   },
 ];
 

@@ -33,8 +33,8 @@ export const projects = [
     problem: "Healthcare providers need better tools to visualize patient data, monitor vitals remotely, and make data-driven clinical decisions.",
     solution: "Developed a digital twin interface that aggregates patient data, visualizes health trends, and provides actionable insights for healthcare monitoring.",
     technologies: ["React", "Node.js", "MongoDB", "Express", "WebSockets"],
-    image: "/assets/projects/meditwin/cover.jpg",
-    github: "[PASTE MEDITWIN GITHUB URL HERE]",
+    image: "/assets/projects/meditwin/cover.png",
+    githubNote: "GitHub repository coming soon",
     liveDemo: null,
   },
   {
@@ -46,8 +46,9 @@ export const projects = [
     problem: "Managing service requests, bookings, and provider coordination is often fragmented across multiple tools, leading to inefficiency.",
     solution: "Built a centralized platform where users can browse services, book appointments, track status, and manage their service history in one place.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-    image: "/assets/projects/servicehub/cover.jpg",
-    github: "[PASTE SERVICEHUB GITHUB URL HERE]",
-    liveDemo: null,
+    image: "/assets/projects/servicehub/cover.png",
+    github: "https://github.com/sreenidhi-k-144/servicehub",
+    liveDemo: "https://servicehub-azure.vercel.app/",
   },
 ];
+

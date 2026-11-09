@@ -6,8 +6,10 @@ import { useReducedMotion } from "../hooks/useReducedMotion";
 export function ProjectCard({ project, index, onClick }) {
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [imgError, setImgError] = useState(false);
   const cardRef = useRef(null);
   const reducedMotion = useReducedMotion();
+  const showImage = Boolean(project.image) && !imgError;
 
   const handleMouseMove = (e) => {
     if (!cardRef.current || reducedMotion) return;
@@ -52,11 +54,20 @@ export function ProjectCard({ project, index, onClick }) {
                 }
           }
           transition={{ type: "spring", stiffness: 150, damping: 15 }}
-          className="aspect-[4/3] bg-surface-elevated flex items-center justify-center"
+          className="aspect-[16/10] bg-surface-elevated flex items-center justify-center p-4"
         >
-          <div className="text-foreground-dim text-sm font-medium">
-            {project.title} Preview
-          </div>
+          {showImage ? (
+            <img
+              src={project.image}
+              alt={`${project.title} preview`}
+              className="max-w-full max-h-full w-auto h-auto object-contain object-center rounded-lg"
+              onError={() => setImgError(true)}
+            />
+          ) : (
+            <div className="text-foreground-dim text-sm font-medium">
+              {project.title} Preview
+            </div>
+          )}
         </motion.div>
 
         {/* Overlay */}

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Github, ExternalLink, ArrowRight } from "lucide-react";
 import { useReducedMotion } from "../hooks/useReducedMotion";
@@ -6,6 +6,12 @@ import { useReducedMotion } from "../hooks/useReducedMotion";
 export function ProjectModal({ project, isOpen, onClose }) {
   const reducedMotion = useReducedMotion();
   const contentRef = useRef(null);
+  const [imgError, setImgError] = useState(false);
+  const showImage = Boolean(project?.image) && !imgError;
+
+  useEffect(() => {
+    setImgError(false);
+  }, [project?.id]);
 
   useEffect(() => {
     const handleEsc = (e) => {
@@ -60,10 +66,19 @@ export function ProjectModal({ project, isOpen, onClose }) {
             </button>
 
             {/* Hero Image */}
-            <div className="aspect-video bg-surface-elevated flex items-center justify-center">
-              <span className="text-foreground-dim text-sm font-medium">
-                {project.title} Preview
-              </span>
+            <div className="aspect-video bg-surface-elevated flex items-center justify-center overflow-hidden p-6">
+              {showImage ? (
+                <img
+                  src={project.image}
+                  alt={`${project.title} preview`}
+                  className="max-w-full max-h-full w-auto h-auto object-contain object-center rounded-xl"
+                  onError={() => setImgError(true)}
+                />
+              ) : (
+                <span className="text-foreground-dim text-sm font-medium">
+                  {project.title} Preview
+                </span>
+              )}
             </div>
 
             {/* Content */}

@@ -19,7 +19,7 @@ export function About() {
             <div className="relative">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-elevated">
                 <img
-                  src="/assets/profile.jpg"
+                  src="/assets/profile.jpeg"
                   alt={`${personal.name} - Profile Photo`}
                   className="w-full h-full object-cover"
                   onError={(e) => {
@@ -28,7 +28,7 @@ export function About() {
                   }}
                 />
                 <div className="hidden items-center justify-center h-full text-foreground-dim">
-                  <span className="text-sm">Add your photo to /public/assets/profile.jpg</span>
+                  <span className="text-sm">Add your photo to /public/assets/profile.jpeg</span>
                 </div>
               </div>
               {/* Decorative element */}
@@ -37,7 +37,7 @@ export function About() {
           </SectionReveal>
 
           {/* Content */}
-          <div>
+          <div className="text-left">
             <SectionReveal>
               <span className="text-accent text-sm font-medium tracking-wider uppercase">
                 About Me
